@@ -9,3 +9,6 @@
 `npx drizzle-kit push`
 - Drizzle Studio
 `npx drizzle-kit studio`
+
+## Shadcn
+`npx shadcn@2.5.0 init`
