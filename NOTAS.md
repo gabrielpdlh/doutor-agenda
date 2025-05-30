@@ -12,3 +12,8 @@
 
 ## Shadcn
 `npx shadcn@2.5.0 init`
+- Shadcn Components
+`npx shadcn@2.5.0 add tabs`
+`npx shadcn@2.5.0 add card`
+`npx shadcn@2.5.0 add input label`
+`npx shadcn@2.5.0 add input form`
