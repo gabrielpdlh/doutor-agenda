@@ -9,6 +9,7 @@
 `npx drizzle-kit push`
 - Drizzle Studio
 `npx drizzle-kit studio`
+`npx drizzle-kit push`
 
 ## Shadcn
 `npx shadcn@2.5.0 init`
@@ -17,3 +18,10 @@
 `npx shadcn@2.5.0 add card`
 `npx shadcn@2.5.0 add input label`
 `npx shadcn@2.5.0 add input form`
+
+## Better Auth
+`npm install better-auth`
+`npx @better-auth/cli@latest generate`
+
+## Dotenv
+`npm i dotenv@16.5.0`
