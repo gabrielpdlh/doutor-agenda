@@ -21,7 +21,6 @@ const DashboardPage = async () => {
   if (clinics.length === 0) {
     redirect("/clinic-form");
   }
-
   return (
     <div>
       <h1>Dashboard</h1>
