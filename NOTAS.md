@@ -19,6 +19,7 @@
 `npx shadcn@2.5.0 add input label`
 `npx shadcn@2.5.0 add input form`
 `npx shadcn@2.5.0 add sonner`
+`npx shadcn@2.5.0 add dialog`
 
 ## Better Auth
 `npm install better-auth`
