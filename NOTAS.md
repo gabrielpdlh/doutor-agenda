@@ -23,6 +23,7 @@
 `npx shadcn@2.5.0 add sidebar`
 `npx shadcn@2.5.0 add dropdown-menu`
 `npx shadcn@2.5.0 add avatar`
+`npx shadcn@2.5.0 add select`
 
 ## Better Auth
 `npm install better-auth`
@@ -30,3 +31,6 @@
 
 ## Dotenv
 `npm i dotenv@16.5.0`
+
+## Numeric Format
+`npm i react-number-format@5.4.4`
