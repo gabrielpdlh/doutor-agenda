@@ -34,3 +34,6 @@
 
 ## Numeric Format
 `npm i react-number-format@5.4.4`
+
+## Next Safe Action
+`npm i next-safe-action@4.0.4`
