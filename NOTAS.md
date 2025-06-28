@@ -37,3 +37,6 @@
 
 ## Next Safe Action
 `npm i next-safe-action@4.0.4`
+
+## Day JS
+`npm i dayjs`
