@@ -3,7 +3,7 @@ import { useAction } from "next-safe-action/hooks";
 import { useForm } from "react-hook-form";
 import { NumericFormat } from "react-number-format";
 import { toast } from "sonner";
-import z from "zod";
+import { z } from "zod";
 
 import { upsertDoctor } from "@/actions/upsert-doctor";
 import { Button } from "@/components/ui/button";
@@ -39,21 +39,21 @@ import { medicalSpecialties } from "../_constants";
 const formSchema = z
   .object({
     name: z.string().trim().min(1, {
-      message: "Nome é obrigatório!",
+      message: "Nome é obrigatório.",
     }),
     specialty: z.string().trim().min(1, {
-      message: "Especialidade é obrigatória!",
+      message: "Especialidade é obrigatória.",
     }),
     appointmentPrice: z.number().min(1, {
-      message: "Preço da consulta é obrigatório!",
+      message: "Preço da consulta é obrigatório.",
     }),
     availableFromWeekDay: z.string(),
     availableToWeekDay: z.string(),
     availableFromTime: z.string().min(1, {
-      message: "Hora de início é obrigatória!",
+      message: "Hora de início é obrigatória.",
     }),
     availableToTime: z.string().min(1, {
-      message: "Hora de término é obrigatória!",
+      message: "Hora de término é obrigatória.",
     }),
   })
   .refine(
@@ -62,7 +62,7 @@ const formSchema = z
     },
     {
       message:
-        "O horário de início não pode ser anterior ao horário de término!",
+        "O horário de início não pode ser anterior ao horário de término.",
       path: ["availableToTime"],
     },
   );
@@ -88,14 +88,13 @@ const UpsertDoctorForm = ({ doctor, onSuccess }: UpsertDoctorFormProps) => {
       availableToTime: doctor?.availableToTime ?? "",
     },
   });
-
   const upsertDoctorAction = useAction(upsertDoctor, {
     onSuccess: () => {
       toast.success("Médico adicionado com sucesso.");
       onSuccess?.();
     },
     onError: () => {
-      toast.error("Erro ao criar médico.");
+      toast.error("Erro ao adicionar médico.");
     },
   });
 
@@ -112,27 +111,27 @@ const UpsertDoctorForm = ({ doctor, onSuccess }: UpsertDoctorFormProps) => {
   return (
     <DialogContent>
       <DialogHeader>
-        <DialogTitle>{doctor ? doctor.name : "Adicionar Médico!"}</DialogTitle>
+        <DialogTitle>{doctor ? doctor.name : "Adicionar médico"}</DialogTitle>
         <DialogDescription>
           {doctor
             ? "Edite as informações desse médico."
-            : "Adicione um novo médico!"}
+            : "Adicione um novo médico."}
         </DialogDescription>
       </DialogHeader>
       <Form {...form}>
-        <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
+            control={form.control}
+            name="name"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Nome</FormLabel>
                 <FormControl>
-                  <Input placeholder="Digite o nome do médico" {...field} />
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
-            control={form.control}
-            name="name"
           />
           <FormField
             control={form.control}
@@ -146,18 +145,18 @@ const UpsertDoctorForm = ({ doctor, onSuccess }: UpsertDoctorFormProps) => {
                 >
                   <FormControl>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Escolha uma especialidade" />
+                      <SelectValue placeholder="Selecione uma especialidade" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {medicalSpecialties.map((specialty) => (
                       <SelectItem key={specialty.value} value={specialty.value}>
-                        <specialty.icon className="size-4 text-blue-500" />
                         {specialty.label}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -197,7 +196,7 @@ const UpsertDoctorForm = ({ doctor, onSuccess }: UpsertDoctorFormProps) => {
                 >
                   <FormControl>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Selecione um dia"></SelectValue>
+                      <SelectValue placeholder="Selecione um dia" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -226,7 +225,7 @@ const UpsertDoctorForm = ({ doctor, onSuccess }: UpsertDoctorFormProps) => {
                 >
                   <FormControl>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Selecione um dia"></SelectValue>
+                      <SelectValue placeholder="Selecione um dia" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>

@@ -26,6 +26,7 @@
 `npx shadcn@2.5.0 add select`
 `npx shadcn@2.5.0 add separator`
 `npx shadcn@2.5.0 add badge`
+`npx shadcn@2.5.0 add alert-dialog`
 
 ## Better Auth
 `npm install better-auth`
