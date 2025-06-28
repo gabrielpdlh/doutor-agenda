@@ -27,6 +27,9 @@
 `npx shadcn@2.5.0 add separator`
 `npx shadcn@2.5.0 add badge`
 `npx shadcn@2.5.0 add alert-dialog`
+`npx shadcn@2.5.0 add table`
+`npm i @tanstack/react-table@8.21.`
+`npx shadcn@2.5.0 add dropdown-menu`
 
 ## Better Auth
 `npm install better-auth`
