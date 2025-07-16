@@ -190,7 +190,7 @@ const UpsertPatientForm = ({
           />
           <DialogFooter>
             <Button
-              type="submit"
+              type="submit" 
               disabled={upsertPatientAction.isPending}
               className="w-full"
             >

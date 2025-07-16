@@ -174,6 +174,7 @@ const UpsertDoctorForm = ({
                   <SelectContent>
                     {medicalSpecialties.map((specialty) => (
                       <SelectItem key={specialty.value} value={specialty.value}>
+                        <specialty.icon className="size-4 text-blue-500" />
                         {specialty.label}
                       </SelectItem>
                     ))}
