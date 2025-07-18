@@ -46,3 +46,9 @@
 
 ## Day JS
 `npm i dayjs`
+
+# Nuqs
+`npm i nuqs@2.4.3 --legacy-peer-deps`
+
+# React Query 
+`npm i @tanstack/react-query`
